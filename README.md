@@ -1,6 +1,7 @@
 # Find out SQL server version
-
+```sql
 SELECT @@VERSION
+```
 
 # Show all DB files sizes
 ```sql
