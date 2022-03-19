@@ -5,8 +5,12 @@ SELECT @@VERSION
 
 # Show all DB files sizes
 ```sql
-SELECT DB_NAME(database_id) AS Database_Name, Name AS File_Name, Physical_Name AS Physical_Path, (size*8)/1024 Size_MB 
-FROM sys.master_files order by Size_MB desc
+SELECT DB_NAME(database_id) AS Database_Name
+       ,Name AS File_Name
+       ,Physical_Name AS Physical_Path
+       ,(size*8)/1024 Size_MB
+FROM sys.master_files 
+order by Size_MB desc
 ```
 
 # Reindex DB (MANDATORY if you shrink log files or DB)
