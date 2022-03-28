@@ -1,4 +1,4 @@
-## Find out SQL server version
+### Find out SQL server version
 ```sql
 SELECT @@VERSION
 ```
@@ -19,7 +19,7 @@ EXEC sp_MSforeachtable 'dbcc dbreindex("?")'
 ```
 
 
-# Show DBs with exceptional compatibility level
+### Show DBs with exceptional compatibility level
 ```sql
 select name as 'DB name' 
        ,compatibility_level as 'DB compatibility'
@@ -29,7 +29,7 @@ where compatibility_level not in (select cmptlevel from master.dbo.sysdatabases 
 ```
 
 
-# Fix the error 'User Group or Role Already Exists in the Current Database'
+### Fix the error 'User Group or Role Already Exists in the Current Database'
 
 ```sql
 sp_change_users_login 'AUTO_FIX', 'someuser'
