@@ -1,9 +1,9 @@
-# Find out SQL server version
+## Find out SQL server version
 ```sql
 SELECT @@VERSION
 ```
 
-# Show all DB files sizes
+### Show all DB files sizes
 ```sql
 SELECT DB_NAME(database_id) AS Database_Name
        ,Name AS File_Name
@@ -13,7 +13,7 @@ FROM sys.master_files
 order by Size_MB desc
 ```
 
-# Reindex DB (MANDATORY if you shrink log files or DB)
+### Reindex DB (MANDATORY if you shrink log files or DB)
 ```sql
 EXEC sp_MSforeachtable 'dbcc dbreindex("?")'
 ```
